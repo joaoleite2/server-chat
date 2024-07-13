@@ -1,10 +1,10 @@
 const users = [];
 
 const addUser = ({ id, name, room }) =>{
-  name = name.trim().toLowerCase;
-  room = room.trim().toLowerCase;
+  name = name.trim().toLowerCase();
+  room = room.trim().toLowerCase();
 
-  const existingUser = user.find((user) => user.room === room && user.name === name);
+  const existingUser = users.find((user) => user.room === room && user.name === name);
 
   if(existingUser){
     return {error : 'Usuário com este nome já na sala'}
@@ -27,4 +27,4 @@ const getUser = (id) => users.find((user) => user.id === id);
 
 const getUsersInRoom = (room) => users.filter((user) => user.room === room);
 
-module.export = { addUser, removeUser, getUser, getUsersInRoom };
+module.exports = { addUser, removeUser, getUser, getUsersInRoom };
