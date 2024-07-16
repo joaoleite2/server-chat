@@ -15,6 +15,15 @@
   height: 60%;
   width: 35%;
 }
+.userContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #FFFFFF;
+  border-radius: 8px;
+  height: 60%;
+  width: 35%;
+}
 
 @media (min-width: 320px) and (max-width: 480px) {
   .outerContainer {
