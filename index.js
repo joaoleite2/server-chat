@@ -14,7 +14,7 @@ app.use(router);
 
 const io = new Server(httpServer, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "https://chat-client-ashy.vercel.app",
     methods: ["GET", "POST"]
   }
 });
