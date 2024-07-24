@@ -13,7 +13,6 @@ const app = express();
 const httpServer = createServer(app);
 
 const router = require('./router');
-const { config } = require('dotenv');
 app.use(router);
 
 const io = new Server(httpServer, {
