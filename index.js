@@ -1,6 +1,9 @@
 const express = require('express');
 const { createServer } = require('node:http');
 const { Server } = require('socket.io');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 const { addUser, removeUser, getUser, getUsersInRoom } = require('./users')
 
@@ -10,11 +13,12 @@ const app = express();
 const httpServer = createServer(app);
 
 const router = require('./router');
+const { config } = require('dotenv');
 app.use(router);
 
 const io = new Server(httpServer, {
   cors: {
-    origin: "https://chat-client-ashy.vercel.app",
+    origin: process.env.URL_CLIENT,
     methods: ["GET", "POST"]
   }
 });
